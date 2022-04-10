@@ -26,7 +26,7 @@ function init() {
             <div class="col-10 description ${getTense(i)}">
                 <textarea id="tb-${i}">${desc}</textarea>
             </div>
-            <div onclick="handleSave(${i})" class="col-1 saveBtn" role="button" alt="save">
+            <div class="col-1 saveBtn" role="button" alt="save" onclick="handleSave(${i})">
                 <i class="fas fa-save"></i>
             </div>
         </div>

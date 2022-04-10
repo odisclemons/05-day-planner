@@ -42,8 +42,9 @@ textarea:focus {
 
 .row {
   white-space: pre-wrap;
-  height: 80px;
+  /* height: 80px; */
   border-top: 1px solid white;
+  height: auto;
 }
 
 .hour {
@@ -85,6 +86,5 @@ textarea:focus {
 
 .col-10 {
   display: flex;
-  border: 1px solid white;
   padding: 0;
 }
