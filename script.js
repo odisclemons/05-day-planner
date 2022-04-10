@@ -1,5 +1,5 @@
 function init() {
-  var descriptions = JSON.parse(localStorage.getItem("descriptions")) ?? {};
+  descriptions = JSON.parse(localStorage.getItem("descriptions")) ?? {};
 
   for (let i = 9; i < 18; i++) {
     let t = i < 13 ? i : i - 12;
@@ -10,7 +10,7 @@ function init() {
                     <p>${t}${i < 12 ? "AM" : "PM"}</p>
                 </div>
                 <div class="col-10 description past">
-                    <textarea id="tb-${i}">${desc}</textarea>
+                    <textarea id="tb-${i}">test info</textarea>
                 </div>
                 <div onclick="handleSave(${i})" class="col-1 saveBtn" role="button" alt="save">
                     <i class="fas fa-save"></i>
@@ -21,8 +21,11 @@ function init() {
   }
 }
 
-var handleSave = (i) => {
-  //console.log(e.target.getAttribute("data-tb"));
-  console.log(i);
-};
+function handleSave(i) {
+  console.log(descriptions);
+  descriptions[`${i}`] = $(`#tb-${i}`)[0].value;
+  localStorage.setItem(descriptions, JSON.stringify(descriptions));
+  console.log("Saved!", $(`#tb-${i}`)[0].value);
+}
+
 init();
